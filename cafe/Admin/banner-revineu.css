@@ -1,0 +1,161 @@
+/* Container Layout - Updated to remove white gap */
+.Dashboard-right {
+  width: 84% !important; /* Left 16% for the sidebar */
+  margin-left: 16%; /* Start exactly after the sidebar */
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #f8f9fa; /* Slight background for better contrast */
+}
+
+/* Banner Container */
+.banner-part {
+  background-image: url("../asset/image/adminpanelbanner.png");
+  width: 96%;
+  margin: 2% auto; /* Centered horizontally */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner-part-text {
+  flex: 1;
+  color: whitesmoke;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  padding-right: 15px;
+}
+
+.banner-part-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.banner-stat-box {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 12px 20px;
+  min-width: 120px;
+}
+
+/* Custom Card Styles */
+.custom-stat-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-top: 5px solid transparent; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.custom-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Themes */
+.border-blue { border-top-color: #4378ff; }
+.border-green { border-top-color: #20c997; }
+.border-orange { border-top-color: #ffb822; }
+.border-purple { border-top-color: #ea02f2; }
+
+.stat-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #6c757d;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1d20;
+    margin: 0;
+}
+
+/* Icon Box Styles */
+.stat-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.icon-blue { background-color: #edf2ff; color: #4378ff; }
+.icon-green { background-color: #e8f9f4; color: #20c997; }
+.icon-orange { background-color: #fff7e6; color: #ffb822; }
+.icon-purple { background-color: #fdf0ff; color: #ea02f2; } 
+
+/* =========================================
+   Responsive Adjustments (Media Queries)
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .Dashboard-right {
+    width: 100% !important; /* Full width on tablets and smaller */
+    margin-left: 0; /* Reset margin on mobile */
+    float: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-part {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: 92%;
+    margin: 15px auto;
+  }
+
+  .banner-part-text {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 0;
+  }
+
+  .banner-part-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .banner-stat-box {
+    flex: 1;
+    min-width: unset;
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-part-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .banner-stat-box {
+    width: 100%;
+  }
+
+  /* Make buttons full width on very small screens */
+  .w-sm-100 {
+      width: 100%;
+  }
+}

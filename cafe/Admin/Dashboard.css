@@ -1,0 +1,161 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Layout */
+.main {
+  display: flex;
+}
+
+/* Sidebar Styling */
+.Dashboard-left {
+  background: #f6ddbe;
+  min-height: 100vh;
+  width: 250px; /* Fixed width for better sliding behavior */
+  padding-left: 1%;
+  padding-right: 1%;
+  position: fixed;
+  top: 0; /* Ensures sidebar starts from the very top */
+  left: 0; /* Ensures it stays strictly on the left edge */
+  z-index: 1050;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Dashboard-right {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease-in-out;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Logo & Branding */
+.cafe_logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 1px;
+  border: 3px solid rgb(171, 109, 0);
+  background-color: #f6f1ec;
+  margin-top: 20px;
+  object-fit: contain;
+}
+
+.Cafe-name {
+  color: rgb(85, 52, 1);
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+  padding-top: 2%;
+}
+
+/* Navigation Menu */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu-list li {
+  margin-top: 12px;
+}
+
+.menu-list li a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dashboard-list-style {
+  display: block;
+  background: #f2a546;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.dashboard-list-style:hover {
+  background: #a55d04;
+  color: white;
+}
+
+/* Logout Button Special Styling */
+.logout-btn {
+  background-color: #f6a29c;
+  color: #f6f1ec;
+}
+
+.logout-btn:hover {
+  background-color: #e90c0c;
+  transition: 0.5s;
+}
+
+.logout-icon {
+  color: red;
+}
+
+.logout-icon:hover {
+  color: rgb(240, 240, 240);
+}
+
+/* Admin Profile Section */
+.admin-part {
+  margin-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.admin_img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 1px;
+  border: 3px solid rgb(2, 168, 223);
+  background-color: #f6f1ec;
+  object-fit: fill;
+}
+
+.admin-part p {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cafe-title {
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  color: rgb(76, 29, 229);
+}
+
+/* ===================== */
+/* Mobile & Tablet View  */
+/* ===================== */
+
+@media (max-width: 992px) {
+  .Dashboard-left {
+    transform: translateX(-100%); /* Hides sidebar completely off-screen */
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+  }
+
+  /* JavaScript triggers this class when hamburger is clicked */
+  .Dashboard-left.active {
+    transform: translateX(0); /* Slides sidebar back onto the screen */
+  }
+
+  .Dashboard-right {
+    margin-left: 0; /* Content takes full width on mobile */
+  }
+
+  .menu-list {
+    display: block;
+    margin-top: 30px;
+  }
+  
+  .dashboard-list-style {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

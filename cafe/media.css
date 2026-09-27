@@ -1,0 +1,56 @@
+@media only screen and (max-width: 991px) {
+    .navbar_area {
+        position: relative;
+    }
+    .banner{
+        height: 25vh;
+    }
+    .day_shift{
+        margin: 0;
+    }
+    iframe{
+        max-width: 250px;
+        max-height: 220px;
+    }
+    #filter-buttons{
+       gap: 0px;
+       
+    } 
+    .Our_client{
+        font-size: 15px;
+    }
+    /* .active{
+        display: none;
+    } */
+}
+
+/* Mobile carousel for menu items */
+@media only screen and (max-width: 767px) {
+    #menuGrid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        justify-content: flex-start !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    /* Hide scrollbar for clean UI */
+    #menuGrid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #menuGrid {
+        -ms-overflow-style: none !important;  
+        scrollbar-width: none !important;  
+    }
+
+    #menuGrid > .menu-item {
+        flex: 0 0 100% !important; 
+        max-width: 100% !important;
+        scroll-snap-align: center !important;
+        scroll-snap-stop: always !important;
+    }
+
+}

@@ -1,0 +1,21 @@
+# ======================================================================
+# 1. CUSTOM ERROR PAGES (AUTO-DETECT LOCALHOST vs LIVE)
+# ======================================================================
+# Server jodi 'localhost' ba '127.0.0.1' hoy
+<If "%{HTTP_HOST} == 'localhost' || %{HTTP_HOST} == '127.0.0.1'">
+    ErrorDocument 404 /cafe/404.php
+</If>
+# Server jodi live (tomar asol domain) hoy
+<Else>
+    ErrorDocument 404 /404.php
+</Else>
+
+# ======================================================================
+# 2. SECURITY: DISABLE DIRECTORY BROWSING
+# ======================================================================
+Options -Indexes
+
+# ======================================================================
+# 3. SET DEFAULT INDEX FILE
+# ======================================================================
+DirectoryIndex index.php index.html
